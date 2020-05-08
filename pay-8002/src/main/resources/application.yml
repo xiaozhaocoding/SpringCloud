@@ -1,0 +1,24 @@
+server:
+  port: 8002
+spring:
+  application:
+    name: payment-service
+  datasource:
+    # 当前数据源操作类型
+    type: com.alibaba.druid.pool.DruidDataSource
+    # mysql驱动类
+    driver-class-name: org.gjt.mm.mysql.Driver
+    url: jdbc:mysql://localhost:3306/db2020?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: zrb196852
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7011.com:7011/eureka
+mybatis:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.xiaozhao.springcloud.entities
+
